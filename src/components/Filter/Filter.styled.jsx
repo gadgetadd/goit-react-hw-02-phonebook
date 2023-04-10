@@ -1,10 +1,12 @@
 import styled from '@emotion/styled';
 
 export const Label = styled.label`
-  display: block;
+  display: flex;
+  width: calc(100% - 40px);
   margin: 20px;
+  gap: 10px;
 `;
 
 export const Input = styled.input`
-  margin-left: 16px;
+  flex-grow: 1;
 `;
