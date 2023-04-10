@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 
 export const Contact = styled.p`
-  max-width: 500px;
   font-size: 18px;
   margin: 0;
 `;

@@ -1,19 +1,15 @@
 import { Component } from 'react';
 import { Report } from 'notiflix/build/notiflix-report-aio';
+import { TbPlaylistAdd } from 'react-icons/tb';
 
 import { ContactForm } from 'components/ContactForm/ContactForm';
 import { ContactList } from 'components/ContactList/ContactList';
 import { Filter } from 'components/Filter/Filter';
-import { AppTitle, SectionTitle, Wrapper } from './App.styled';
+import { AppTitle, SectionTitle, Wrapper, IconWrapper } from './App.styled';
 
 export class App extends Component {
   state = {
-    contacts: [
-      { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
-      { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
-      { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
-      { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
-    ],
+    contacts: [],
     filter: '',
   };
 
@@ -57,7 +53,13 @@ export class App extends Component {
         <ContactForm onSubmit={this.formSubmitHandler} />
         <SectionTitle>Contacts</SectionTitle>
         <Filter value={this.state.filter} onChange={this.filterHandler} />
-        <ContactList contacts={contacts} onDelete={this.deleteHandler} />
+        {contacts.length === 0 ? (
+          <IconWrapper>
+            <TbPlaylistAdd size="150px" color="#0000001a" />
+          </IconWrapper>
+        ) : (
+          <ContactList contacts={contacts} onDelete={this.deleteHandler} />
+        )}
       </Wrapper>
     );
   }

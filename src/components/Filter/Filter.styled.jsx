@@ -7,6 +7,4 @@ export const Label = styled.label`
 
 export const Input = styled.input`
   margin-left: 16px;
-  max-width: 370px;
-  width: 100%;
 `;

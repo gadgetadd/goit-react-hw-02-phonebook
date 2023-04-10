@@ -15,3 +15,8 @@ export const Wrapper = styled.div`
   padding: 0 20px;
   max-width: 600px;
 `;
+
+export const IconWrapper = styled.div`
+  margin: 0 auto;
+  width: 150px;
+`;
