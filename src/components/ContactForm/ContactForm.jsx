@@ -15,6 +15,13 @@ export class ContactForm extends Component {
     number: '',
   };
 
+  formReset = () => {
+    this.setState({
+      name: '',
+      number: '',
+    });
+  };
+
   inputChangeHandler = e => {
     const { name, value } = e.currentTarget;
     this.setState({
@@ -31,6 +38,7 @@ export class ContactForm extends Component {
       number: number.value,
     };
     this.props.onSubmit(newContact);
+    this.formReset();
   };
 
   render() {
