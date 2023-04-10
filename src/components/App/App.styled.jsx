@@ -9,3 +9,9 @@ export const AppTitle = styled.h1`
 export const SectionTitle = styled.h2`
   text-align: center;
 `;
+
+export const Wrapper = styled.div`
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 600px;
+`;

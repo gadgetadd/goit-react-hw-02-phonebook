@@ -4,7 +4,7 @@ import { Report } from 'notiflix/build/notiflix-report-aio';
 import { ContactForm } from 'components/ContactForm/ContactForm';
 import { ContactList } from 'components/ContactList/ContactList';
 import { Filter } from 'components/Filter/Filter';
-import { AppTitle, SectionTitle } from './App.styled';
+import { AppTitle, SectionTitle, Wrapper } from './App.styled';
 
 export class App extends Component {
   state = {
@@ -51,14 +51,14 @@ export class App extends Component {
     );
 
     return (
-      <>
+      <Wrapper>
         <AppTitle>Phonebook</AppTitle>
+        <SectionTitle>Add new contact</SectionTitle>
         <ContactForm onSubmit={this.formSubmitHandler} />
-
         <SectionTitle>Contacts</SectionTitle>
         <Filter value={this.state.filter} onChange={this.filterHandler} />
         <ContactList contacts={contacts} onDelete={this.deleteHandler} />
-      </>
+      </Wrapper>
     );
   }
 }
